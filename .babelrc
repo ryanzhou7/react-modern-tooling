@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      //preset-env: transform js to work on older browsers
+      "@babel/preset-env",
+      {
+        // targets, target specific browsers
+        "targets": [
+          "last 2 versions", // all last 2 versions of the browser
+          "not dead", // that are not dead
+          "not < 2%", // that are more than 2 % of the market share
+          "not ie 11" // not including ie 11
+        ],
+        "useBuiltIns": "entry" // if the browser has this natively, don't include the polyfill for it?
+      }
+    ],
+
+    //preset-react: for jsx
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel" // Saves state on webpack dev server reloads
+  ]
+}
